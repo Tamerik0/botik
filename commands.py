@@ -146,8 +146,11 @@ async def new_dialog_command(update, context):
     push_message(user_id, 'assistant', msg)
     await update.message.reply_text(msg)
 
+
 async def set_provider_command(update, context):
     user_id = update.effective_user.id
-    set_provider(user_id, update.message.text)
-    await update.message.reply_text(f'Изменили провайдера на {update.message.text}, по умолчанию {default_provider}')
+    set_provider(user_id, context.args[0])
+    await update.message.reply_text(f'Изменили провайдера на {context.args[0]}, по умолчанию {default_provider}')
+
+
 go_back_handler = MessageHandler(filters.Text(['вернуться назад']), go_back_handler_func)
