@@ -47,6 +47,7 @@ def main():
     application.add_handler(CommandHandler("set_timer", set_timer_command))
     application.add_handler(CommandHandler("unset_timer", unset_timer_command))
     application.add_handler(CommandHandler("new_dialog", new_dialog_command))
+    application.add_handler(CommandHandler("set_provider", set_provider_command))
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, communicate))
     application.run_polling()
 
