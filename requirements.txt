@@ -1,0 +1,2 @@
+python-telegram-bot[All]
+g4f[All]
