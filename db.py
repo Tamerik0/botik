@@ -14,7 +14,11 @@ def init_db():
             role,
             content
         );""")
-
+    cur.execute(
+        """CREATE TABLE UserSettings (
+            user,
+            selected_provider
+        );""")
 
 
 if init:

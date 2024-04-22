@@ -20,7 +20,7 @@ async def communicate(update: Update, context):
         ans = await user_prompt(update.effective_user.id, update.message.text)
         await update.message.reply_text(ans.content)
     except BaseException as ex:
-        await update.message.reply_text(str(ex))
+        await update.message.reply_text(f'Произошла ошибка:{str(ex)}, попробуйте поменять провайдера')
 
 
 async def logger_msg_handler(update, context):
